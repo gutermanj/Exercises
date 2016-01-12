@@ -1,0 +1,30 @@
+Starship Program
+
+Attributes
+___________
+
+Misions
+Capacity
+Weapons
+Shields
+Speed
+Crew
+Name
+Homebase
+
+
+Actions
+__________
+
+Fly
+Take off
+Engage the enemy
+Evade
+Go light speed / go warp
+
+1. Figure out what classes I need
+2. Identify attributes that change between individuals
+3. dentify actions that can be preformed
+4. Identify which attributes should be their own class
+5. Assign every attribute and action to a class
+6. Identify which actions need additional information
