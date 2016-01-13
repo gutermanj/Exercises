@@ -32,7 +32,7 @@ class WheelCounter #Class so we can store the array into something and use metho
 
 	def wheel_count # The method to calculate all of the required values
 		total_wheels = @vehicles.reduce(0) do | sum, x | #loops through the objects in @vehicles array and adds the wheels together (x.wheels)
-			 sum += x.wheels.to_i
+			 sum += x.wheels
 			end
 
 			puts "The total amount of wheels is: " "#{total_wheels}"
