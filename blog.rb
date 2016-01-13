@@ -16,7 +16,13 @@ class Blog
 		first_post = 0
 		last_post = 2
 
-		(@current_page - 1) * posts_per_page = first_post
+		first_post = (@current_page - 1) * @posts_per_page
+		last_post = (first_post + 3) - 1
+		current_posts = @posts[first_post..last_post]
+
+		current_posts.each do | post |
+			post.display
+		end
 
 		sorted = post.sort do | x, y |
 			y.date <=> x.date
