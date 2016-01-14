@@ -11,9 +11,9 @@ class Game
 		@rooms.push(new_room) #The method to push the rooms into the array above
 	end
 
-	def print_rooms
-		puts "#{rooms}" #I made this to make sure the .add_room method worked
-	end
+
+
+
 
 	def finish
 		if @current_pos == @rooms.length - 1
@@ -30,6 +30,10 @@ class Game
 			false
 		end
 	end
+
+
+
+
 
 	def start(direction) # This is complicated. This is what is going to determine if you go through the right exit
 			current_room = @rooms[@current_pos]
@@ -53,6 +57,11 @@ class Game
 end
 
 
+
+
+
+
+
 class Room
 	attr_accessor :description, :exit, :back #This class is simply so you can create the actual rooms and manually put them into the @rooms array
 	def initialize(description, exit, back) #The 2 different details about them (exit == answer)
@@ -60,8 +69,12 @@ class Room
 		@exit = exit #Same as 44
 		@back = back
 	end
-
 end
+
+
+
+
+
 
 room_adder = Game.new #This is so in a way I can use the Game class
 
