@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+
+<div class="text-center">
+<h1>Signed in as <%= session[:user] %>!</h1>
+
+<h3>Welcome to your profile</h3>
+
+
+<p>You can't really do much except for log out... so give that a try.</p>
+
+<form action="/logout" method="POST">
+<button type="submit" class="btn btn-danger">Log out</button>
+
+</form>
+
+</div>
