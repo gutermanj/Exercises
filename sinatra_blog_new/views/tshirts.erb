@@ -1,0 +1,15 @@
+<h1>Julian's Awesome T-Shirt Store</h1>
+
+<p>Some T-Shirts are:</p>
+
+<ul>
+	<% @shirts.each_with_index do |tshirt, i| %>
+	<li>
+		<a href="/tshirt/<%= i + 1 %>">
+			<%= tshirt %>
+		</a>
+	</li>
+	<% end %>
+
+
+</ul>

@@ -1,0 +1,56 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<style>
+
+body {
+
+
+}
+
+.btn-info {
+	width: 100px;
+}
+
+.buttons {
+	float: left;
+}
+
+</style>
+
+<body>
+	<div class="text-center">
+		<h2>Calculator</h2>
+
+		<form action="/operation" method="POST" autocomplete="off">
+			<label for="first_number">First Number:</label>
+			<br>
+			<input type="text" placeholder="Enter a number" name="first_number" required/>
+			<br>
+			<br>
+			<label for="second_number">Second Number:</label>
+			<br>
+			<input type="text" placeholder="Enter another number" name="second_number" required/>
+			<br><br>
+
+
+			<h3>Please Select An Option</h3>
+			<div class="row text-center">
+				<br>
+				<button name="operation" value="add" type="submit" class="btn btn-info">ADD</button>
+
+
+				<button name="operation" value="subtract" type="submit"class="btn btn-info">SUBTRACT</button>
+
+
+				<button name="operation" value="multiply" type="submit"class="btn btn-info">MULTIPLY</button>
+
+
+				<button name="operation" value="divide" type="submit" class="btn btn-info">DIVIDE</button>
+
+
+			</div>
+		</form>
+	</div>
+</body>

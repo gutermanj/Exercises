@@ -1,0 +1,29 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<style>
+
+body {
+
+
+}
+
+</style>
+<body>
+	<div class="text-center">
+		<h4>| Result |</h4>
+		<br>
+	<h3><%="#{@first.to_i} - #{@second.to_i} = #{@difference.to_i}"%><h3>
+
+		<form action="/" method="GET">
+			<button type="submit" class="btn btn-danger">Another One</button>
+		</form>
+			<form action="/stored" method="POST">
+			<input type="hidden" name="stored" value="<%=@difference%>">
+			<button type="submit" class="btn btn-danger" value="<%=@difference%>">SAVE</button>
+		</form>
+	</div>	
+
+
+</body>

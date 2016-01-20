@@ -1,0 +1,40 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<style>
+
+body {
+
+
+}
+
+</style>
+
+
+
+<body>
+
+	<div class="text-center">
+		<h2>Addition Calculator</h2>
+			<form action="/calculate_add" method="POST" autocomplete="off">
+				<label for="first_number">First Number:</label>
+					<br>
+						<input type="text" placeholder="Enter a number" name="first_number" required/>
+							<br>
+								<br>
+							<label for="second_number">Second Number:</label>
+						<br>
+					<input type="text" placeholder="Enter another number" name="second_number" required/>
+				<br><br>
+			<button type="submit" class="btn btn-info">Add!</button>
+		</form>
+
+		<form action="/" method="GET">
+			<button type="submit" class="btn btn-danger">HOME</button>
+		</form>
+	</div>
+
+
+</body>
+</html>
