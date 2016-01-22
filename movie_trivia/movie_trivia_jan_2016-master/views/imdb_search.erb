@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+<script type="text/javascript">
+
+function myFunction() {
+	if <% @tomato %>
+		alert('yayyy');
+	else
+		alert('nooo');
+}
+
+</script>
+<br>
+<div class="text-center">
+<button class="btn btn-danger" style="width: 200px;" onClick="alert('Which movie was filmed in <%= @tomato %>?')">Play!</button>
+</div>
+<br>
+
+<% @results.each do |x| %>
+
+	<% if x.year == @tomato %>
+		<% result = "Yay" %>
+	<% else %>
+		<% result = "Nay" %>
+	<% end %>
+	<a href="#" onClick="alert('<%= result %>')"><img src="<%= x.poster %>" width="300px" height="300px" ></a>
+
+<% end %>
+
+
+
+
+
+
+</div>
