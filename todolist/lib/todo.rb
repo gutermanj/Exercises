@@ -6,9 +6,14 @@ class ToDoList
 
 	def add_task(task)
 		@tasks.push(task)
-
-		puts "#{@tasks}"
 	end
+	
+	def delete_task(id_to_delete)
+		@tasks = @tasks.delete_if do |task| 
+			task.id == id_to_delete
+		end
+	end
+
 
 end
 
@@ -51,7 +56,15 @@ class Task
 		@content = new_content
 
 		puts "Your updated task is now #{content}"
-		puts "You updated ur list#{@created_at.hour}:#{@created_at.min}"
+		puts "You updated ur list at #{@created_at.hour}:#{@created_at.min}"
+	end
+
+
+
+	def find_task_by_id(id_to_find)
+		@tasks.find do |task|
+			task.id == id_to_find
+		end
 	end
 
 
