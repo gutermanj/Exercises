@@ -7,8 +7,8 @@ var Quiz = function(questionArray) {
 	this.score = 0;
 }
 
-	//
-Quiz.prototype.startgame = function(){
+
+Quiz.prototype.startgame = function() {
 	console.log('pulling a question');
 		var options = {
 			prompt: `${this.currentQuestion.question}`
