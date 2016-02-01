@@ -1,13 +1,15 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 
-
 <div class="text-center">
-<% @posts.each do | x | %>
-<%= x.title %><br>
-<%= x.date %><br><br>
-<%= x.text %>
-<hr style="width: 200px; border-color: darkgray;">
-<% end %>
+<br><br>
+<a href="/new_post"><button class="btn btn-primary">New Post</button></a>
+<br><br>
+		<% @post.each do | x | %>
+		<h2><%= x.title %></h2><br>
+		<em><%= x.text %></em><br><br>
+		<h4><%= x.date %></h4>
+		<hr style="width: 200px; border-color: darkgray;">
+		<% end %>
 
 </div>

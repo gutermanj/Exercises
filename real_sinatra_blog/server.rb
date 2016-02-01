@@ -22,20 +22,35 @@ require_relative("lib/post.rb")
 	
 		blog = Blog.new
 	
-	blog.add_post(post1)
-	blog.add_post(post2)
-	blog.add_post(post3)
-	blog.add_post(post4)
-	blog.add_post(post5)
-	blog.add_post(post6)
-	blog.add_post(post7)
-	blog.add_post(post8)
-	blog.add_post(post9)
+
 
 		puts blog.print
 
 
 get '/' do 
-	@posts = blog.post 
+	@post = blog.post
 	erb(:home)
 end
+
+get '/new_post' do
+	erb(:new_post)
+end
+
+post '/posted' do
+	title = params[:title]
+	body = params[:body]
+	date = Date.today
+	sponsored = params[:sponsored]
+	new_post = Post.new(title, body, date, sponsored)
+
+	blog.add_post(new_post)
+
+	redirect '/'
+	end
+
+
+
+
+
+
+

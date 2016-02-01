@@ -1,5 +1,4 @@
 
-
 class Post
 	attr_accessor :title, :date, :text, :sponsored
 	def initialize(title, date, text, sponsored)
