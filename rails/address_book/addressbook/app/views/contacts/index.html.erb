@@ -1,0 +1,12 @@
+<h1>Your Contact Book</h1>
+
+
+<a href="/contacts/new">Create A Contact</a>
+<br>
+
+	<% @contacts.keys.sort.each do |starting_letter| %>
+  <% @contacts[starting_letter].each do |x| %>
+  <a href="/contacts/<%= x.id %>/"><%= x.name %></a>
+    	<br>
+  	<% end %>
+	<% end %>
