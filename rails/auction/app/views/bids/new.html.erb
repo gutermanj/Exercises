@@ -1,0 +1,10 @@
+
+
+<%= form_for [@product, @bid] do |f| %>
+
+<%= f.label 'amount' %>
+<%= f.number_field 'amount' %>
+
+<%= f.submit 'submit bid' %>
+
+<% end %>

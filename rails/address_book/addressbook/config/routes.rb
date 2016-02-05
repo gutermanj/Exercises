@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get "/contacts/:id" => "contacts#show"
 
+  get '/:shortlink' => 'contacts#index'
+
  #CREATE SHOW HERE
 
 

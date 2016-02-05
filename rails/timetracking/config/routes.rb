@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'projects/:project_id/entries' => "entries#index"
+
   get 'site/home'
 
   # The priority is based upon order of creation: first created -> highest priority.

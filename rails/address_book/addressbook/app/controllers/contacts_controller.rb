@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+
   def index
   	@contacts = Contact.all.group_by{|u| u.name[0]}
   	render 'index'
@@ -23,7 +24,7 @@ class ContactsController < ApplicationController
   end
 
   def show
-  	#THIS DONT WORK
+  	#Dis work now
   	id = params[:id]
   	@contact = Contact.find_by(id: id)
   end

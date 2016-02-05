@@ -1,0 +1,30 @@
+<h1>Auction Items</h1>
+
+
+<% @products.each do |x| %>
+<h3><%= x.title %></h3><br>
+<span>Description: </span><%= x.description %><br>
+<span>Expires: </span><strong><%= x.deadline %></strong><br>
+<span>Created by: </span><%= x.user_id %><br>
+<%= x.id %>
+<span>Current bid price: </span>
+<% x.bids.each do |x| %>
+<% if x.amount == nil %>
+<span>No bid is set... yet</span>
+<% else %>
+<%= x.amount %>
+<% end %>
+<% end %>
+
+<%= link_to 'Bid', new_product_bid_path(x) %>
+
+
+<br><hr>
+<% end %>
+
+
+<% @bids.each do |x| %>
+
+<%= x.amount %>
+
+<% end %>

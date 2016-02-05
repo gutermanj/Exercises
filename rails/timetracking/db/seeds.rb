@@ -8,33 +8,19 @@
 
 
 Project.create name: "Potato", description: "Tomato"
-
 Project.create name: "Chicken", description: "lolololol"
-
 Project.create name: "Julian", description: "I am the creator"
-
 Project.create name: "Bruh", description: "I'm the bruh..."
-
 Project.create name: "Tommy", description: "Chicken"
-
 Project.create name: "Barbara", description: "Got a hair cut"
-
 Project.create name: "Chris", description: "Is in a bootcamp"
-
 Project.create name: "Alex", description: "Is dating Alli"
-
 Project.create name: "John", description: "Doenathon"
-
 Project.create name: "Lisa", description: "Homers daughter"
-
 Project.create name: "Angie", description: "Tomato"
-
 Project.create name: "BAtron", description: "lolololol"
-
 Project.create name: "Tyler The Creator", description: "I am the creator"
-
 Project.create name: "Hoomla", description: "I'm the bruh..."
-
 Project.create name: "Tycreesha", description: "Chicken"
 
 Project.create name: "Michael", description: "Got a hair cut"
@@ -56,3 +42,13 @@ Project.create name: "Kyle", description: "Is dating Alli"
 Project.create name: "Alan", description: "Doenathon"
 
 Project.create name: "Toopa", description: "Homers daughter"
+
+
+5.times do |i|
+	p = Project.create(name: "Project #{i}", description: "Hello #{i}")
+	if i.odd?
+		p.entries.create(minutes: 10 * i, hours: 1 * i)
+	else
+		p.entries.create(minutes: i, hours: i)
+	end
+end
