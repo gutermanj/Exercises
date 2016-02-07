@@ -1,0 +1,10 @@
+<%= form_for [@concert, @comment] do |f| %>
+	<%= f.label 'Name' %><br>
+	<%= f.text_field 'name', :class => 'name-field', :required => true %>
+	<br><br>
+	<%= f.label 'Comment' %><br>
+	<%= f.text_area 'comment', :class => 'comment-field', :required => true %>
+	<br>
+	<%= f.submit 'Add Comment', :class => 'btn btn-info' %>
+	<hr class="hr">
+	<% end %>

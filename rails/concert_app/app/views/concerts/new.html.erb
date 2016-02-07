@@ -1,0 +1,41 @@
+
+<div class="container new-concert">
+	<div class="row concert-form">
+		<div class="col-sm-3">
+			<h3>Create A New Event</h3>
+			<hr>
+		</div>
+
+		<div class="col-sm-4">
+			<%= form_for [@concert] do |f| %>
+				<br>
+				<%= f.label 'Artist' %>
+				<br>
+				<%= f.text_field 'artist', :class => 'form-field' %>
+				<br><br>
+				<%= f.label 'Venue' %>
+				<br>
+				<%= f.text_field 'venue', :class => 'form-field' %>
+				<br><br>
+				<%= f.label 'Where (City, State)' %>
+				<br>
+				<%= f.text_field 'city', :class => 'form-field' %>
+				<br><br>
+				<%= f.label 'Date' %>
+				<br>
+				<%= f.date_field 'date', :class => 'form-field', :style => 'color: black;' %>
+				<br><br>
+				<%= f.label 'Price' %>
+				<br>
+				<%= f.number_field :price, :step => 0.01, :class => 'form-field', :style => 'height: 35px;' %>
+				<br><br>
+				<%= f.label 'Description' %>
+				<br>
+				<%= f.text_field 'description', :class => 'form-field' %>
+				<br><br>
+				<%= f.submit 'Create', :class => 'btn btn-primary' %>
+				<br><br>
+				<% end %>
+		</div>
+	</div>
+</div>

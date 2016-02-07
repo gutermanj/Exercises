@@ -1,0 +1,10 @@
+<body>
+<p>hey</p>
+<% if session[:user_id] == @user.id %>
+<p>Hey <%= session[:username] %>, this is your profile! :) </p>
+
+<% else %>
+<%= @user.username %><span>'s Profile</span>
+<% end %>
+
+</body>
