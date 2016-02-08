@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
 
   	@concert = Concert.find_by(id: params[:concert_id])
 
-  	@comment = @user.concert.comments.new(comment_params)
+  	@comment = @concert.comments.new(comment_params)
 
   	if @comment.save
   		redirect_to concert_path(@concert)

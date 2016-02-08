@@ -1,6 +1,7 @@
 class Concert < ActiveRecord::Base
-	has_many :comments
 	belongs_to :user
+	has_many :comments
+	
 
 	validates :artist, presence: true
 	validates :venue, presence: true

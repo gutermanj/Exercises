@@ -8,9 +8,9 @@
 
 
 	<div class="row content-wrapper" style="padding-top: 0px;">
-		<div class="col-sm-8" style="background-color: #EEEEEE; -webkit-box-shadow: 0px 2px 24px -5px rgba(158,158,158,1);
--moz-box-shadow: 0px 2px 24px -5px rgba(158,158,158,1);
-box-shadow: 0px 2px 24px -5px rgba(158,158,158,1);">
+		<div class="col-sm-8" style="background-color: #EEEEEE; -webkit-box-shadow: inset 0px 2px 40px -9px rgba(145,145,145,0.75);
+-moz-box-shadow: inset 0px 2px 40px -9px rgba(145,145,145,0.75);
+box-shadow: inset 0px 2px 40px -9px rgba(145,145,145,0.75);">
 			<h3>Today's Events</h3>
 			<hr class="cool-underline" style="border-color: black;">
 			<% @concerts_today.each do |x| %>
@@ -34,7 +34,7 @@ box-shadow: 0px 2px 24px -5px rgba(158,158,158,1);">
 			<h3>Events This Month</h3>
 			<hr class="cool-underline">
 			<% @concerts_this_month.each do |x| %>
-			<span class="index-title"><%= link_to x.artist, concert_path(x), :style => 'text-decoration: none; color: black;', :class => 'sliding-u-l-r-month' %></span>
+			<span class="index-title"><%= link_to x.artist, concert_path(x, @user_id), :style => 'text-decoration: none; color: black;', :class => 'sliding-u-l-r-month' %></span>
 			<br>
 				<span>@<b><%= x.city %></b></span>
 				<br>

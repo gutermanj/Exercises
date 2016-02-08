@@ -18,6 +18,15 @@
 
    <script>
 
+   $(function() {
+   $("li").click(function() {
+      // remove classes from all
+      $("li").removeClass("active");
+      // add class to the one we clicked
+      $(this).addClass("active");
+   });
+});
+
   </script>
 
 <% if session[:user_id] %>
@@ -37,7 +46,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'Home', concerts_path %><span class="sr-only">(current)</span></a></li>
+        <li class="active"><%= link_to 'Home', concerts_path %><span class="sr-only">(current)</span></a></li>
         <li><%= link_to 'Profile', user_path(@user_id) %></li>
           </ul>
         </li>

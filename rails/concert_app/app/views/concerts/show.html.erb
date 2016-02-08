@@ -3,8 +3,10 @@
 	<div class="row">
 		<div class="col-sm-6">
 			<h3><%= @concert.artist %></h3>
+			
 				<hr>
 			<h4 class="where">Where </h4>
+			<%= @user.inspect %>
 			<h5>@<%= @concert.venue %></h5>
 			<h5><%= @concert.city %></h5>
 			<br>
@@ -37,6 +39,7 @@
 				<%= link_to 'delete', concert_comment_path(@concert, x), method: :delete %>
 				
 				<% end %>
+				
 
 		</div>
 	</div>
