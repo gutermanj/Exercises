@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'user_sessions/destroy'
 
 
+
 resources(:users, only: [:create, :destroy, :show, :new, :index]) do
     resources(:concerts, only: [:create, :destroy, :new, :index, :show])
 

@@ -14,12 +14,16 @@ class ConcertsController < ApplicationController
   	@comment = @concert.comments.new
     @user_id = session[:user_id]
     @user = User.find_by(email: params[:email])
-
   end
 
   def new
+    @user = User.find_by(id: params[:user_id])
   	@concert = Concert.new
     @user_id = session[:user_id]
+
+    if session[:user_id] == nil
+      not_found
+    end
 
   end
 
@@ -37,7 +41,6 @@ class ConcertsController < ApplicationController
 
   def destroy
   	@comment = Comment.find_by(id: params[:id])
-
 
   	@concert = Concert.find_by(id: params[:id])
   	

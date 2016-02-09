@@ -1,3 +1,36 @@
+<script type="text/javascript">
+
+    $(window).load(function(){
+        $('#myModal').modal('show');
+    });
+
+</script>
+
+
+<% if session[:user_id].nil? %>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-center" id="myModalLabel" style="color: darkred;">Access Denied</h4>
+      </div>
+      <div class="modal-body text-center " style="color: gray;">
+      	<p class="glyphicon glyphicon-ban-circle text-center" style="color: darkred; font-size: 25px;"></p><br>
+      	<b>
+        You have to be signed in to create an event!<br>
+        Please either sign in or create an account.
+    </b>
+      </div>
+      <div class="modal-footer">
+        <%= link_to 'Login', new_user_session_path, :class => 'btn btn-default' %>
+        <%= link_to 'Signup', new_user_path, :class => 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% end %>
 
 <div class="container new-concert">
 	<div class="row concert-form">
@@ -37,5 +70,7 @@
 				<br><br>
 				<% end %>
 		</div>
+
+
 	</div>
 </div>

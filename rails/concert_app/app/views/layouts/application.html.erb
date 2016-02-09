@@ -16,18 +16,6 @@
 </head>
 <body>
 
-   <script>
-
-   $(function() {
-   $("li").click(function() {
-      // remove classes from all
-      $("li").removeClass("active");
-      // add class to the one we clicked
-      $(this).addClass("active");
-   });
-});
-
-  </script>
 
 <% if session[:user_id] %>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -46,11 +34,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to 'Home', concerts_path %><span class="sr-only">(current)</span></a></li>
-        <li><%= link_to 'Profile', user_path(@user_id) %></li>
-          </ul>
+        <li class="<%= "active" if current_page?(concerts_path) %>">
+            <%= link_to 'Home', concerts_path %><span class="sr-only">(current)</span>
+        </li>
+        <li class="<%= "active" if current_page?(user_path(@user_id)) %>">
+            <%= link_to 'Profile', user_path(@user_id) %>
         </li>
       </ul>
+
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
@@ -58,7 +49,9 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-       
+               <li><%= link_to 'New Event', new_user_concert_path(@user_id), :style => 'font-weight: bold;' %></li>
+
+<li><%= link_to 'Logged in, ' + session[:username], user_path(session[:user_id]) %></li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
@@ -100,8 +93,9 @@
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login | Signup <span class="caret"></span></a>

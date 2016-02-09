@@ -8,14 +8,16 @@
 
 
 	<div class="row content-wrapper" style="padding-top: 0px;">
-		<div class="col-sm-8" style="background-color: #EEEEEE; -webkit-box-shadow: inset 0px 2px 40px -9px rgba(145,145,145,0.75);
--moz-box-shadow: inset 0px 2px 40px -9px rgba(145,145,145,0.75);
-box-shadow: inset 0px 2px 40px -9px rgba(145,145,145,0.75);">
+		<div class="col-sm-8 panel-default box-shadow--6dp" style="background-color: #F7F7F7; border-style: solid; border-radius: 5px; border-color: lightgray; border-width: 1px;">
 			<h3>Today's Events</h3>
 			<hr class="cool-underline" style="border-color: black;">
 			<% @concerts_today.each do |x| %>
-			<span style="text-align: right; margin-top: -25px;"><%= link_to '', concert_path(x), method: :delete, :style => 'font-size: 12px; padding-left: 14px; color: darkred; font-size: 17px; margin-left: 95%;', :class => 'glyphicon glyphicon-remove-circle' %></span><br>
 			<span class="index-title"><%= link_to x.artist, concert_path(x), :style => 'text-decoration: none; color: black;', :class => 'sliding-u-l-r' %></span>
+			
+			<% if session[:user_id] == x.user_id %>
+			<%= link_to 'x', concert_path(x), method: :delete, :class => 'close' %>
+			<% end %>
+
 			<br>
 				<span>@<b><%= x.city %></b></span>
 				<br>
@@ -34,13 +36,17 @@ box-shadow: inset 0px 2px 40px -9px rgba(145,145,145,0.75);">
 			<h3>Events This Month</h3>
 			<hr class="cool-underline">
 			<% @concerts_this_month.each do |x| %>
-			<span class="index-title"><%= link_to x.artist, concert_path(x, @user_id), :style => 'text-decoration: none; color: black;', :class => 'sliding-u-l-r-month' %></span>
+			<span class="index-title"><%= link_to x.artist, concert_path(x), :style => 'text-decoration: none; color: black;', :class => 'sliding-u-l-r-month' %></span>
+			
+			<% if session[:user_id] == x.user_id %>
+			<%= link_to 'x', concert_path(x), method: :delete, :class => 'close' %>
+			<% end %>
+
 			<br>
 				<span>@<b><%= x.city %></b></span>
 				<br>
 				<small class="date-info"><%= x.date.month %>/<%= x.date.day %>/<%= x.date.year %></small>
 				<br>
-				<%= link_to 'delete', concert_path(x), method: :delete, :style => 'font-size: 12px; padding-left: 14px; color: darkred;' %>
 				<br><br>
 				<hr style="border-color: black;">
 			<% end %>

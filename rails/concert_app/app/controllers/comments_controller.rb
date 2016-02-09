@@ -8,10 +8,10 @@ class CommentsController < ApplicationController
   # 	@comment = @concert.comments.new
   # end
 
-  # def show
-
-  # 	@comments = Comment.find_by(id: params[:id])
-  # end
+  def show
+    @comment.user = User.find_by(id: params[:user_id])
+  	@comments = Comment.find_by(id: params[:id])
+  end
 
   def create
     @user = session[:user_id]
@@ -19,6 +19,8 @@ class CommentsController < ApplicationController
   	@concert = Concert.find_by(id: params[:concert_id])
 
   	@comment = @concert.comments.new(comment_params)
+
+    @comment.user_id = @user
 
   	if @comment.save
   		redirect_to concert_path(@concert)
