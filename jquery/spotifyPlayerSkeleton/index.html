@@ -1,0 +1,78 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="script.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<!-- Just to hold space -->
+			</div><!-- /.col-lg-3 -->
+			<div class="col-lg-6">
+				<br><br>
+			    <div class="input-group text-center">
+			      <input type="text" class="form-control js-search-term" placeholder="Search track...">
+			      <span class="input-group-btn">
+			        <button class="btn btn-default js-search-song" type="button">Go!</button>
+			      </span>
+			    </div><!-- /input-group -->
+			  </div><!-- /.col-lg-6 -->
+		</div> <!-- ./row -->
+
+	<div class="widget">
+		<div class="header">
+		<!-- Try adding/removing these classes: -->
+		<!-- disabled -->
+		<!-- playing -->
+		<div class="btn-play disabled"></div> <!-- PLAY BUTTON -->
+
+		<div class="metadata">
+		  <p class="title">Search for a preview</p>
+		  <a class="author" data-id=""></a>
+
+		  <div class="seekbar">
+		    <progress class="progressbar" value="0" max="30"></progress>
+		  </div>
+		</div>
+		</div>
+		<img src="" id="js-album" width="" height="">
+		<div class="js-track-preview">
+		
+		</div>
+	</div>
+
+
+<!-- MODAL -->
+		<div class="modal fade js-modal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+
+	      <div class="modal-header">
+	        <!-- Close button -->
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span>&times;</span>
+	        </button>
+
+	        <div class="js-modal-header">
+	        	
+	        </div>
+	      </div>
+
+	      <div class="modal-body">
+	        <p>This is the modal's body.</p>
+	      </div>
+
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+
+</div> <!-- ./container -->
+
+</body>
+</html>

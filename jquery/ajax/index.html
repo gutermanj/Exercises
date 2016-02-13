@@ -2,7 +2,7 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="script.js"></script>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -13,8 +13,23 @@
 <ul class="js-characters-list">
 
 </ul>
+<div class="text-center">
 <button class="js-show-characters">Fetch characters</button><br>
-<button class="js-jedi-master">Jedi Master</button>
+<button class="js-jedi-master">Jedi Master</button><br>
 <button class="js-add-character">Add Kylo</button>
+<br><br>
+	<form id="character">
+		<label for="name">Name</label><br>
+			<input type="text" name="name" id="name">
+			<br><br>
+		<label for="occupation">Occupation</label><br>
+			<input type="text" name="occupation" id="occupation">
+			<br><br>
+		<label for="weapon">Weapon</label><br>
+			<input type="text" name="weapon" id="weapon">	
+			<br>
+			<button type="submit" class="addingIt">Add Character</button>
+	</form>
+</div>
 </body>
 <html>

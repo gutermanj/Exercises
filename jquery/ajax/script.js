@@ -9,8 +9,33 @@ $(document).on('ready', function() {
 	});
 
 	$('.js-add-character').on('click', function() {
-		publishKylo();//SOMETHING GOES HERE
+		publishKylo();
 	});
+
+	$('.addingIt').on('click', function(e) {
+		e.preventDefault();
+		var name = $("#name").val(); 
+  		var occupation = $("#occupation").val();
+  		var weapon = $("#weapon").val();
+  		var newCharacter = 'name='+name+'&occupation='+occupation+'&weapon='+weapon;
+
+  		$.ajax({
+			type:"POST",
+
+			url: 'https://ironhack-characters.herokuapp.com/characters',
+
+			data: newCharacter,
+
+			success: function() {
+				alert('Emo Kylo Ren added successfully!');
+			},
+
+			error: function () {
+				alert('Kylo Ren was not added.');
+			}
+		});	
+	});
+
 });
 
 //----------------------------------------------
