@@ -1,0 +1,79 @@
+<html>
+
+<style type="text/css">
+
+hr {
+	border-color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+}
+p, div {
+    font-family: 'Lato', sans-serif;
+   	
+}
+.signed-in-body {
+	color: black;
+}
+.not-signed-in-body {
+	color: lightgray;
+	background-image: url('music-wallpaper-15.jpg');
+		background-size: 100% 100%;
+   		background-repeat: no-repeat;
+		background-attachment: fixed;
+}
+
+
+
+
+</style>
+
+<!-- ============ IF NO ONE IS SIGNED IN ===========-->
+
+
+<% if current_user == nil %>
+
+<body class="not-signed-in-body">
+	<div class="container not-signed-in-body">
+		<div class="above-pic">
+<h1>Aimuzer</h1>
+<p>Let's Discover Together</p>
+<hr>
+
+<%= link_to 'Register', new_user_registration_path, class: 'btn btn-danger btn-md' %>
+
+<%= link_to 'Sign In', new_user_session_path, class: 'btn btn-info btn-md', :style => 'margin-left: 25px; width: 90px;' %>
+
+		</div> <!-- above pic -->
+
+
+	</div>
+
+</body>
+
+<!-- ============ IF NO ONE IS SIGNED IN ===========-->
+
+<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+
+<!-- ============ IF SOMEONE IS SIGNED IN ===========-->
+
+<% else %>
+
+
+
+<body class="signed-in-body">
+
+<div class="container">
+	<div class="row">
+<h1>Hey you're signed in!</h1>
+
+	</div> <!-- row -->
+</div> <!-- container -->
+</body>
+
+<% end %>
+
+<!-- ============ IF SOMEONE IS SIGNED IN ===========-->
+
+</html>

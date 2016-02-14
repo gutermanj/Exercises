@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+body { padding-top: 70px; font-family: 'Lato', sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    
+}
+p, div {
+    font-family: 'Lato', sans-serif;
+   
+}
+
+.nav {
+	font-family: 'Open-sans', sans-serif;
+}
+
+.header-pic {
+	width: 100%;
+}
+
+.above-pic {
+
+	position: absolute;
+	z-index: 75;
+}
+

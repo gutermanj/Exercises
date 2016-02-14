@@ -1,0 +1,52 @@
+<html>
+<head>
+
+</head>
+
+<style type="text/css">
+
+p, div {
+	color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: black;
+}
+
+</style>
+
+<body>
+	<div class="container">
+
+<% if current_user.id == @user.id %>
+<!-- ======= DYNAMIC PROFILE =========== -->
+<div class="row">
+	<div class="col-lg-2">
+		<%= image_tag @user.avatar.url, :style => 'width: 150px; height: 150px;' %> <!-- @user.avatar.url || @user.avatar.url(:thumb) -->
+	</div> <!-- col-lg-2 -->
+
+	<div class="col-lg-4">
+		<h3><%= @user.first_name %> <%= @user.last_name %></h3>
+		<h5><%= @zipcode[:city] %>, <%= @zipcode[:state_code] %></h5>
+
+
+	</div> <!-- col-lg-4 -->
+</div> <!-- row -->
+<% else %> 
+<!-- STATIC PROFILE -->
+<div class="row">
+	<div class="col-lg-2">	
+		<%= image_tag @user.avatar.url, :style => 'width: 150px; height: 150px;' %> <!-- @user.avatar.url || @user.avatar.url(:thumb) -->
+	</div> <!-- col-lg-2 -->
+
+	<div class="col-lg-4">
+		<h3><%= @user.first_name %> <%= @user.last_name %></h3>
+		<h5><%= @zipcode[:city] %>, <%= @zipcode[:state_code] %></h5>
+
+
+	</div> <!-- col-lg-4 -->
+</div> <!-- row -->
+<% end %>
+</div>
+</body>
+</html>
