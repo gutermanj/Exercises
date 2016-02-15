@@ -15,6 +15,15 @@
 </head>
 <body>
 
+  <style type="text/css">
+@media only screen and (max-width: 1199px) {
+.search-bar-responsive {
+        display: none;
+}
+
+}
+  </style>
+
 <!-- ___________________________NAV BAR__________________________ -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -39,12 +48,18 @@
 
          <li class=""><%= link_to 'Discover', root_path %></li>
       </ul>
+
+      <div class="search-bar-responsive"> <!-- remove search on small screen -->
+
       <form class="navbar-form navbar-left" role="search" style="margin-left: 17%;">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search for an artist, song, or tag..." style="width: 350px;">
         </div>
         <button type="submit" class="btn btn-info">Submit</button>
       </form>
+
+    </div> <!-- search bar responsive -->
+
       <ul class="nav navbar-nav navbar-right">
       		<% if current_user %>
         <li><%= link_to 'Welcome back, ' + current_user.first_name, user_path(current_user) %></li>

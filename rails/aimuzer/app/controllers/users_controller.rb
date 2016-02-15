@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   		@zipcode = ZipCodes.identify(@user.zipcode.to_s)
 
   		@randtags = rand(100)
+
   		@randfollowers = rand(1000)
 
 	end
