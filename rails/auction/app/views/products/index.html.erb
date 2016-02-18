@@ -1,30 +1,26 @@
 <h1>Auction Items</h1>
 
+<% if current_user %>
+	<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+	<br>
+	<%= link_to 'My Profile', user_path(current_user.id) %>
+	<% else %>
+	<%= link_to 'Sign Up', new_user_registration_path %>
+	<br>
+	<%= link_to 'Sign In', new_user_session_path %>
+	<br>
+	<% end %>
+
 
 <% @products.each do |x| %>
 <h3><%= x.title %></h3><br>
 <span>Description: </span><%= x.description %><br>
-<span>Expires: </span><strong><%= x.deadline %></strong><br>
-<span>Created by: </span><%= x.user_id %><br>
-<%= x.id %>
-<span>Current bid price: </span>
-<% x.bids.each do |x| %>
-<% if x.amount == nil %>
-<span>No bid is set... yet</span>
-<% else %>
-<%= x.amount %>
-<% end %>
-<% end %>
-
-<%= link_to 'Bid', new_product_bid_path(x) %>
-
+<span>Expires: </span><strong><%= x.deadline.strftime('%l:%M %p') %></strong><br>
+<span>Created by: </span><%= x.user_id %>
+<br>
+<br>
 
 <br><hr>
 <% end %>
 
 
-<% @bids.each do |x| %>
-
-<%= x.amount %>
-
-<% end %>

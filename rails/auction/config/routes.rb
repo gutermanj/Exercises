@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   # get 'bids/index'
 
   # get 'bids/show'
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
 
   resources(:bids, only: [:index, :show, :create, :destroy, :new])
 
-
+  post 'sellerreviews/:id/' => 'seller_reviews#create'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,7 +1,27 @@
+<style type="text/css">
+body {
+  background-color: #000000;
+}
+
+.login-text {
+  color: #ABABAB;
+}
+
+.control-label {
+  color: white;
+}
+
+a {
+  color: #ABABAB;
+}
+
+</style>
+
+
 <div class="container">
 
-<h2>Log in</h2>
-<hr>
+<h2 class="login-text">Log in</h2>
+<hr style="border-color: #3B5998">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), :class => 'form-horizontal') do |f| %>
 
   <div class="form-group">
@@ -24,12 +44,12 @@
   <% if devise_mapping.rememberable? -%>
     <div class="form-group">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :remember_me, :class => 'control-label' %>
     </div>
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in", :class => 'btn btn-info' %>
+    <%= f.submit "Log in", :class => 'btn btn-danger' %>
   </div>
 <% end %>
 
@@ -37,6 +57,5 @@
 <%= render "devise/shared/links" %>
 
 
-<%= link_to image_tag("soundcloud_connect.png"), soundcloud_connect_path %>
 </div>
 

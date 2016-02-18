@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
 	def index
+
 		@products = Product.all
 		@bids = Bid.all
 		render 'index'
@@ -17,27 +18,21 @@ class ProductsController < ApplicationController
 
 
 	def create
-	  @product = Product.new(
-			:title => params[:product][:title],
-			:description => params[:product][:description],
-			:deadline => params[:product][:deadline],
-			:user_id => params[:product][:user_id],
-			:bid => params[:product][:bid])
 
-		@user = User.find_by(email: params[:email])
+		@user = current_user
 
-            unless @user.nil?
+            unless current_user.nil?
                 @product = @user.products.new(
             :title => params[:product][:title],
 			:description => params[:product][:description],
 			:deadline => params[:product][:deadline],
-			:user_id => params[:product][:user_id],
-			:bid => params[:product][:bid])
+			:user_id => params[:product][current_user.id])
 
                 if @product.save
                     redirect_to action: 'index', controller: 'products'
                 else
                     render 'new'
+                    flash[:message] = 'Something went wrong!'
                 end
             else
                 render 'new'
